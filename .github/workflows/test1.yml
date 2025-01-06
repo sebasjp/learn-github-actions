@@ -25,6 +25,6 @@ jobs:
     needs: job1
     steps:
     - name: Checkout
-      run: actions/checkout@v4.1.7  # ejecucion de una agrupacion de steps
+      uses: actions/checkout@v4.1.7  # ejecucion de una agrupacion de steps
     - name: LS
       run: ls -al
