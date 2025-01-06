@@ -1,7 +1,13 @@
 name: workflow prueba
 
-on: [push]
-
+# eventos: trigers que indican que el workflow se debe ejecutar
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   job1:
     runs-on: ubuntu-latest
