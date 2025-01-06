@@ -4,10 +4,10 @@ name: workflow prueba
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   job1:
     runs-on: ubuntu-latest
