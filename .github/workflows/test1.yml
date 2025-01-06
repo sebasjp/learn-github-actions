@@ -16,6 +16,7 @@ jobs:
       run: cat hola.txt
   job2:
     runs-on: ubuntu-latest
+    needs: job1
     steps:
     - name: LS
       run: ls -al
