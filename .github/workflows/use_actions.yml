@@ -1,0 +1,23 @@
+name: scripts execution
+
+# eventos: trigers que indican que el workflow se debe ejecutar
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout dir
+      uses: actions/checkout@v2
+
+    - name: ls
+      run: ls -a
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.1.0
+      with: # pasarle parametros al actions
+        node-version: latest
+
+    - name: node version
+      run: node --version
+            
