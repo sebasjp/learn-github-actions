@@ -1,4 +1,4 @@
-name: scripts execution
+name: use actions
 
 # eventos: trigers que indican que el workflow se debe ejecutar
 on: [push]
