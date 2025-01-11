@@ -23,8 +23,8 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     needs: job1
-    steps:
+    steps: # ejecucion de una agrupacion de steps
     - name: Checkout
-      uses: actions/checkout@v4.1.7  # ejecucion de una agrupacion de steps
+      uses: actions/checkout@v4.1.7 # pararnos en la raiz del repositorio
     - name: LS
       run: ls -al
