@@ -1,0 +1,25 @@
+name: variables de entorno
+
+# eventos: trigers que indican que el workflow se debe ejecutar
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    env: # variables de entorno a nivel job
+      VAR_JOB: "var entorno nivel job"
+
+    steps:
+      - name: print var job
+        run: echo "VAR_JOB=$VAR_JOB"
+
+      - name: print var step
+        env:
+          VAR_STEP: "var entorno nivel step"
+        run: echo "VAR_STEP=$VAR_STEP"
+
+      - name: print var from github
+        run: echo "VAR_ENV_REPO=${{ vars.VAR_ENV_REPO }}"
+
+        
