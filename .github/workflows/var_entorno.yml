@@ -14,12 +14,13 @@ jobs:
       - name: print var job
         run: echo "VAR_JOB=$VAR_JOB"
 
-      - name: print var step
-        env:
+      - name: print var step 
+        env: # variable a nivel step
           VAR_STEP: "var entorno nivel step"
         run: echo "VAR_STEP=$VAR_STEP"
 
       - name: print var from github
-        run: echo "VAR_ENV_REPO=${{ vars.VAR_ENV_REPO }}"
+        run: echo "VAR_ENV_REPO=${{ vars.VAR_ENV_REPO }}" # traer variables a nivel repo (desde github aplica para todos los workflows)
 
-        
+      - name: print secrets from github
+        run: echo "SECRET_TEST=${{ secrets.SECRET_TEST }}" # traer secrets a nivel repo (desde github aplica para todos los workflows)
