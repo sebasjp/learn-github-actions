@@ -1,0 +1,20 @@
+name: use services (docker)
+
+# eventos: trigers que indican que el workflow se debe ejecutar
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:5.7 # declaracion de la imagen de docker
+        env: # variables de entorno
+          MYSQL_ROOT_PASSWORD: example
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: ls
+        run: ls
